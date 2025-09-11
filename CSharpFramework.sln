@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36429.23 d17.14
+VisualStudioVersion = 17.14.36429.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationFramework", "AutomationFramework\AutomationFramework.csproj", "{2CBA481C-9F03-4B42-A0FB-6EF912935072}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationFrameworkTest", "AutomationFrameworkTest\AutomationFrameworkTest.csproj", "{D66DF53C-5DFC-55D1-B491-D6519CB985E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2CBA481C-9F03-4B42-A0FB-6EF912935072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2CBA481C-9F03-4B42-A0FB-6EF912935072}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2CBA481C-9F03-4B42-A0FB-6EF912935072}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2CBA481C-9F03-4B42-A0FB-6EF912935072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D66DF53C-5DFC-55D1-B491-D6519CB985E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D66DF53C-5DFC-55D1-B491-D6519CB985E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D66DF53C-5DFC-55D1-B491-D6519CB985E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D66DF53C-5DFC-55D1-B491-D6519CB985E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
