@@ -24,4 +24,10 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\" />
+    <Folder Include="TestData\" />
+    <Folder Include="Reports\" />
+  </ItemGroup>
+
 </Project>

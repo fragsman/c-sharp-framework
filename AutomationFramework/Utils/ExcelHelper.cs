@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutomationFramework.Utils
 {
-    internal class ExcelUtil
+    internal class ExcelHelper
     {
     }
 }
