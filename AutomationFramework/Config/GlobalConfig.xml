@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AutomationFramework>
+	<RunSettings>
+		<!-- URL of the Website under test -->
+		<AUT>https://askomdch.com/</AUT>
+		<!-- ExecutionEnvironment possible values will be 'local' or 'github' -->
+		<ExecutionEnvironment>local</ExecutionEnvironment>
+		<!-- Username to be used for login the Website. If ExecutionEnvironment is 'local' this value will be used. -->
+		<Username>fede</Username>
+		<!-- Password to be used for login the website. If ExecutionEnvironment is 'local' this value will be used. -->
+		<Password>1234</Password>
+		<!-- Browser valid values: InternetExplorer, Edge, Chrome, Headless, Firefox. If ExecutionEnvironment is local this value will be used. -->
+		<Browser>edge</Browser>
+		<!-- IsLog valid values: Y, N -->
+		<IsLog>Y</IsLog>
+		<!-- Log Path for text file -->
+		<LogPath>C:\\AutomationFrameworkLogs\\</LogPath>
+	</RunSettings>
+</AutomationFramework>

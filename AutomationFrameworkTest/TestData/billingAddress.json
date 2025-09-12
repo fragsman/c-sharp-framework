@@ -1,0 +1,10 @@
+{
+  "firstName": "Federico",
+  "lastName": "Pantaleone",
+  "country": "Argentina",
+  "addressLineOne": "7 y 54",
+  "city": "La Plata",
+  "state": "Buenos Aires",
+  "postalCode": "1900",
+  "email": "fede_pa@example.com"
+}
