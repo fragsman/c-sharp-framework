@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium;
 
 namespace AutomationFramework.Utils
 {
     internal class Interactor
     {
+        public static IWebElement FindElement(IWebDriver driver, By locator)
+        {
+            return driver.FindElement(locator);
+        }
     }
+    
 }

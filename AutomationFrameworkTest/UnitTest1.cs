@@ -1,16 +1,20 @@
-namespace AutomationFramework
+using AutomationFramework.Core;
+using AutomationFramework.POM;
+
+namespace AutomationFrameworkTest
 {
-    public class Tests
+    public class Tests : BaseTest
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
 
         [Test]
-        public void Test1()
+        public void SeleniumTest()
         {
-            Assert.Pass();
+            driver.Navigate().GoToUrl("https://askomdch.com/");
+            MainPage mainPage = new MainPage(driver);
+            mainPage.ClickOnSuperiorLink("Store");
+            StorePage storePage = new StorePage(driver);
+            storePage.GetCurrentPageInNav();
+            Assert.That(storePage.GetCurrentPageInNav(), Is.EqualTo("Store"));
         }
 
         [Test]
