@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium;
 
 namespace AutomationFramework.POM
 {
-    internal class BasePage
+    public class BasePage
     {
+        protected IWebDriver driver;
+
+        protected BasePage(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
     }
 }
