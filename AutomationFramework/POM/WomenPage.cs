@@ -3,11 +3,12 @@ using OpenQA.Selenium;
 
 namespace AutomationFramework.POM
 {
-    public class StorePage : BasePage
+    public class WomenPage : BasePage
     {
         private readonly By currentPageLink = By.ClassName("woocommerce-breadcrumb");
+	    private readonly By title = By.TagName("h1");
 
-        public StorePage(IWebDriver driver) : base(driver)
+        public WomenPage(IWebDriver driver) : base(driver)
         {
         }
 
@@ -15,5 +16,11 @@ namespace AutomationFramework.POM
         {
             return Interactor.GetElementText(driver, currentPageLink).Split("/")[1].Trim();
         }
+
+        public string GetPageTitle()
+        {
+            return Interactor.GetElementText(driver, title);
+        }
+        
     }
 }
