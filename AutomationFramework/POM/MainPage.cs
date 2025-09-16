@@ -5,9 +5,9 @@ namespace AutomationFramework.POM
 {
     public class MainPage : BasePage
     {
-        private By loc_storeLink = By.XPath("//li[@id='menu-item-1227']/a");
-        private By loc_menLink = By.XPath("//li[@id='menu-item-1228']/a");
-        private By loc_womenLink = By.XPath("//li[@id='menu-item-1229']/a");
+        private readonly By loc_storeLink = By.XPath("//li[@id='menu-item-1227']/a");
+        private readonly By loc_menLink = By.XPath("//li[@id='menu-item-1228']/a");
+        private readonly By loc_womenLink = By.XPath("//li[@id='menu-item-1229']/a");
 
         public MainPage(IWebDriver driver) : base(driver)
         {

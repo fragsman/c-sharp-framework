@@ -7,28 +7,52 @@ namespace AutomationFrameworkTest
     {
 
         [Test]
-        public void SeleniumTest()
+        public void StoreLinkLeadsToStorePage()
         {
             driver.Navigate().GoToUrl("https://askomdch.com/");
             MainPage mainPage = new MainPage(driver);
             mainPage.ClickOnSuperiorLink("Store");
             StorePage storePage = new StorePage(driver);
             storePage.GetCurrentPageInNav();
-            Assert.That(storePage.GetCurrentPageInNav(), Is.EqualTo("Store"));
+            
+            Assert.That(storePage.GetCurrentPageInNav(), Is.EqualTo("StoreXXX"));
         }
 
         [Test]
-        public void Test2()
+        public void MenLinkLeadsToMenPage()
         {
-            Assert.That("Fede", Is.EqualTo("Camila"));
+            driver.Navigate().GoToUrl("https://askomdch.com/");
+            MainPage mainPage = new MainPage(driver);
+            mainPage.ClickOnSuperiorLink("Men");
+            StorePage storePage = new StorePage(driver);
+            storePage.GetCurrentPageInNav();
+            
+            Assert.That(storePage.GetCurrentPageInNav(), Is.EqualTo("Men"));
         }
 
         [Test]
-        public void Test3()
+        public void SeleniumActionsTest()
         {
-            int expected = 42;
-            int sum = 40 + 2;
-            Assert.That(sum, Is.EqualTo(expected));
+            MainPage mainPage = new MainPage(driver);
+            mainPage.ClickOnSuperiorLink("Men");
+            MenPage menPage = new MenPage(driver);
+            menPage.SpecialSearch();
+
+            Assert.That(menPage.GetSearchResultsTitle(), Is.EqualTo("Search results: “Shoes”"), "Verify the first letter is capital");
+        }
+
+        [Test]
+        public void WomenLinkLeadsToWomenPage()
+        {
+            MainPage mainPage = new MainPage(driver);
+            mainPage.ClickOnSuperiorLink("Women");
+            WomenPage womenPage = new WomenPage(driver);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(womenPage.GetPageTitle(), Is.EqualTo("W1men"), "Check that Women page have 'Women' on its title");
+                Assert.That(womenPage.GetCurrentPageInNav(), Is.EqualTo("Women"), "Check that Women link leads to a page that contains 'Women' on its navigation tree");
+            });
         }
     }
 }
