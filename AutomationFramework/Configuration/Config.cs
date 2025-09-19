@@ -1,10 +1,8 @@
-﻿using AutomationFramework.Core;
-
-namespace AutomationFramework.Config
+﻿namespace AutomationFramework.Configuration
 {
-    public class GlobalConfig
+    public class Config
     {
-        public static string AUT { get; set; }
+        public static string BaseURL { get; set; }
 
         public static string ExecutionEnvironment { get; set; }
 
