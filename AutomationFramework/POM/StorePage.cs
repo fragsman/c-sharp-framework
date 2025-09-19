@@ -11,7 +11,7 @@ namespace AutomationFramework.POM
         {
         }
 
-        public String GetCurrentPageInNav()
+        public string GetCurrentPageInNav()
         {
             return Interactor.GetElementText(driver, currentPageLink).Split("/")[1].Trim();
         }

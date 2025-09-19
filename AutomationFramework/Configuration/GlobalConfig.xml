@@ -2,7 +2,7 @@
 <AutomationFramework>
 	<RunSettings>
 		<!-- URL of the Website under test -->
-		<AUT>https://askomdch.com/</AUT>
+		<BaseURL>https://askomdch.com/</BaseURL>
 		<!-- ExecutionEnvironment possible values will be 'local' or 'github' -->
 		<ExecutionEnvironment>local</ExecutionEnvironment>
 		<!-- Username to be used for login the Website. If ExecutionEnvironment is 'local' this value will be used. -->

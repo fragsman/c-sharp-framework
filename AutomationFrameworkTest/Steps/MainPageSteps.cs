@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutomationFramework.POM;
+using AutomationFrameworkTest.Support;
+using Reqnroll;
 
 namespace AutomationFrameworkTest.Steps
 {
-    internal class MainPageSteps
+    [Binding]
+    public class MainPageSteps : BaseStep
     {
+        public MainPageSteps(MyHooks myHooks) : base(myHooks)
+        {
+        }
+
+        [Given("user selects the {string} link")]
+        public void UserSelectsTheLink(string linkName)
+        {
+            MainPage mainPage = new MainPage(GetDriver());
+            mainPage.ClickOnSuperiorLink(linkName);
+        }
     }
 }
