@@ -9,7 +9,7 @@ namespace AutomationFrameworkTest.Support
     [Binding]
     public class MyHooks
     {
-        private ScenarioContext _scenarioContext;
+        private readonly ScenarioContext _scenarioContext;
         private IWebDriver driver;
 
         public MyHooks(ScenarioContext scenarioContext)
@@ -61,6 +61,11 @@ namespace AutomationFrameworkTest.Support
         {
             driver.Quit();
             driver.Dispose();
+        }
+
+        public ScenarioContext GetScenarioContext()
+        {
+            return _scenarioContext;
         }
     }
 }

@@ -52,7 +52,6 @@ namespace AutomationFramework.Configuration
             string workingDirectory = Directory.GetCurrentDirectory();//This is the bin\debug\net8.0 folder of the project from which you run the tests
             if (dir == MyDirectory.Working)
                 return Directory.GetParent(workingDirectory).FullName;
-                //return workingDirectory;
             string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
             string solutionDirectory = Directory.GetParent(projectDirectory).FullName;
             if(dir == MyDirectory.AutomationFrameworkTest)

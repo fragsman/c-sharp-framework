@@ -1,10 +1,9 @@
 Feature: Short Selenium Tests for AskOmCdh page
 
-  #I will make it fail on purpose just to see a failure on the report
   @web
   Scenario: Store link functionality
     Given user selects the "Store" link
-    Then user should see in the store search title "ShoeXXX"
+    Then user should see in the store search title "Store"
 
   @web
   Scenario: Men link functionality
