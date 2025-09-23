@@ -27,7 +27,7 @@ namespace AutomationFrameworkTest.Features
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "Short Selenium Tests for AskOmCdh page", "", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "Short Selenium Tests for AskOmCdh page", null, global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
 #line 1 "ShortTests.feature"
 #line hidden
@@ -120,7 +120,7 @@ namespace AutomationFrameworkTest.Features
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Store link functionality", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 5
+#line 4
   this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -130,11 +130,11 @@ namespace AutomationFrameworkTest.Features
             else
             {
                 await this.ScenarioStartAsync();
-#line 6
+#line 5
     await testRunner.GivenAsync("user selects the \"Store\" link", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 7
-    await testRunner.ThenAsync("user should see in the store search title \"ShoeXXX\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 6
+    await testRunner.ThenAsync("user should see in the store search title \"Store\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -152,7 +152,7 @@ namespace AutomationFrameworkTest.Features
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Men link functionality", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 10
+#line 9
   this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -162,10 +162,10 @@ namespace AutomationFrameworkTest.Features
             else
             {
                 await this.ScenarioStartAsync();
-#line 11
+#line 10
     await testRunner.GivenAsync("user selects the \"Men\" link", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 12
+#line 11
     await testRunner.ThenAsync("user should see in the men search title \"Men\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -184,7 +184,7 @@ namespace AutomationFrameworkTest.Features
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search functionality using Selenium Actions", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 15
+#line 14
   this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -194,13 +194,13 @@ namespace AutomationFrameworkTest.Features
             else
             {
                 await this.ScenarioStartAsync();
-#line 16
+#line 15
     await testRunner.GivenAsync("user selects the \"Men\" link", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 17
+#line 16
     await testRunner.AndAsync("user performs a special search for \"Shoes\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 18
+#line 17
     await testRunner.ThenAsync("user should see in the search results \'“Shoes”\'", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -219,7 +219,7 @@ namespace AutomationFrameworkTest.Features
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Women link functionality", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 22
+#line 21
   this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -229,10 +229,10 @@ namespace AutomationFrameworkTest.Features
             else
             {
                 await this.ScenarioStartAsync();
-#line 23
+#line 22
     await testRunner.GivenAsync("user selects the \"Women\" link", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 24
+#line 23
     await testRunner.ThenAsync("user should see in \"W1men\" in page title and \"Women\" in current navigation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }

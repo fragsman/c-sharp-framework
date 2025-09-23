@@ -22,10 +22,10 @@ namespace AutomationFramework.Utils
 
         public static void ConfigureLogFile()
         {
-            PreviousLogCleanup();
             string filename = "logfile";
             string dir = ConfigReader.GetProjectDirectory(MyDirectory.Working);
-            _logFile = dir + "\\"+ filename +".log";
+            _logFile = dir + "\\"+ filename +".log"; 
+            PreviousLogCleanup();
         }
 
         public static void Write(string logMessage)

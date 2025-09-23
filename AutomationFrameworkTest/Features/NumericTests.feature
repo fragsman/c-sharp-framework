@@ -1,7 +1,7 @@
 Feature: Numeric Tests
 
-  #These tests won't run in Web Browser or using selenium. However they should be able to run too
-
+  #The following test won't trigger Web Browser as it is not tagged as @web.
+  #Steps will be separated into ShortStepsA and ShortStepsB to demonstrate variable sharing among different files.
   @non_web_tests
   Scenario Outline: Age restriction upon login
     Given the user "<name>" inputs its <age>
