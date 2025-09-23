@@ -7,7 +7,7 @@ namespace AutomationFramework.Configuration
     {
         public static void SetConfig()
         {
-            string strFilename = GetProjectDirectory(ProjectType.AutomationFramework) + "\\Configuration\\GlobalConfig.xml";
+            string strFilename = GetProjectDirectory(MyDirectory.AutomationFramework) + "\\Configuration\\GlobalConfig.xml";
             Logger.Debug("Reading configuration file: " + strFilename);
             FileStream stream = new FileStream(strFilename, FileMode.Open);
             XPathDocument document = new XPathDocument(stream);
@@ -16,8 +16,6 @@ namespace AutomationFramework.Configuration
             //Set XML Details in the property to be used accross framework
             Config.BaseURL = navigator.SelectSingleNode("AutomationFramework/RunSettings/BaseURL").Value.ToString();
             Config.ExecutionEnvironment = navigator.SelectSingleNode("AutomationFramework/RunSettings/ExecutionEnvironment").Value.ToString();
-            Config.IsLog = navigator.SelectSingleNode("AutomationFramework/RunSettings/IsLog").Value.ToString();
-            Config.LogPath = navigator.SelectSingleNode("AutomationFramework/RunSettings/LogPath").Value.ToString();
 
             string chosenBrowser;
             if (Config.ExecutionEnvironment.Equals("local"))
@@ -44,20 +42,22 @@ namespace AutomationFramework.Configuration
         }
 
         /// <summary>
-        /// Sometimes it depends from which project you run the tests, the current directory will be different.
-        /// So I add as a parameter the desired project and I will return the correct path.
-        /// Because the only thing that changes is the last folder, the solution folder might be in a different place.
+        /// This method return the directory path based on the parameter, it can be the working directory, 
+        /// AutomationFramework or AutomationFrameworkTest. The first part depends on the framework installation.
         /// </summary>
-        /// <param name="project">This is the ProjectType</param>
+        /// <param name="dir">This is directory I want</param>
         /// <returns></returns>
-        public static string GetProjectDirectory(ProjectType project)
+        public static string GetProjectDirectory(MyDirectory dir)
         {
             string workingDirectory = Directory.GetCurrentDirectory();//This is the bin\debug\net8.0 folder of the project from which you run the tests
+            if (dir == MyDirectory.Working)
+                return Directory.GetParent(workingDirectory).FullName;
+                //return workingDirectory;
             string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
             string solutionDirectory = Directory.GetParent(projectDirectory).FullName;
-            if(project == ProjectType.AutomationFrameworkTest)
+            if(dir == MyDirectory.AutomationFrameworkTest)
                 solutionDirectory += "\\AutomationFrameworkTest";
-            else if (project == ProjectType.AutomationFramework)
+            else if (dir == MyDirectory.AutomationFramework)
                 solutionDirectory += "\\AutomationFramework";
             return solutionDirectory;
         }
