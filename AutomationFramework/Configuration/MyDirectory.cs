@@ -1,7 +1,8 @@
 ﻿namespace AutomationFramework.Configuration
 {
-    public enum ProjectType
+    public enum MyDirectory
     {
+        Working,
         AutomationFramework,
         AutomationFrameworkTest
     }

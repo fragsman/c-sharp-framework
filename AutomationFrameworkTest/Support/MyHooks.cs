@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Configuration;
 using AutomationFramework.Core;
+using AutomationFramework.Utils;
 using OpenQA.Selenium;
 using Reqnroll;
 
@@ -20,13 +21,15 @@ namespace AutomationFrameworkTest.Support
         public static void BeforeTestRun()
         {
             //Initialize reports?
-            //Initialize Logger
+            Logger.ConfigureLogFile();
+            Logger.Info("Logfile configured.");
         }
 
         //This will only run run for those scenarios tagged as web as they need a driver and browser
         [BeforeScenario("@web")]
         public void BeforeWebScenario()
         {
+            Logger.Info("Creating web driver...");
             driver = new DriverHandler().CreateWebDriver();
             driver.Navigate().GoToUrl(Config.BaseURL);
             
@@ -36,6 +39,7 @@ namespace AutomationFrameworkTest.Support
         [AfterScenario("@web")]
         public void AfterWebScenario()
         {
+            Logger.Info("Closing web driver...");
             //TestContext.AddResultFile(reportUrl + "dashboard.html");
             //TestContext.AddResultFile(reportUrl + "index.html");
             DriverTeardown();
@@ -44,6 +48,7 @@ namespace AutomationFrameworkTest.Support
         [AfterTestRun]
         public static void AfterTestRun()
         {
+            Logger.Info("AfterTestRun...");
             //_extentReports.Flush();
         }
 
