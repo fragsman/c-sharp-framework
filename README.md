@@ -18,6 +18,8 @@ This is a Selenium with C# Automation framework just in case I need to use one q
 ## Running Tests 🏃
 - You can either run tests from Test Explorer visual interface or via cli. For the following example we will do everything using cli. _Note:_ To execute previous commands, verify you are located inside at the Solution level in the 📟.
 - In 📟 type `dotnet test` and press Enter
+### Run Results
+- After every run a _logfile.log_ with execution details will be generated inside _AutomationFrameworkTest/bin/Debug_.
 - Once tests finished _allure-results_ folder will be generated (inside _AutomationFrameworkTest/Report_ folder), along with the results.
 - To generate human-readable and beautiful HTML report, type in the 📟 `allure generate AutomationFrameworkTest/Reports/allure-results -o AutomationFrameworkTest/Reports/allure-report --clean --single-file`. The report will be generated in _AutomationFrameworkTest/Reports/allure-report_.
 
