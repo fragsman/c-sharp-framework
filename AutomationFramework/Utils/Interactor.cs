@@ -57,25 +57,5 @@ namespace AutomationFramework.Utils
             }
             return elementText;
         }
-
-        /*public static Screenshot GetScreenshot()
-        {
-            return ((ITakesScreenshot)Driver)?.GetScreenshot();
-        }
-
-        public static void TakeScreenshot(string screenshotFileName)
-        {
-            Screenshot scrsht = GetScreenshot();
-            try
-            {
-                scrsht.SaveAsFile(screenshotFileName);
-            }
-            catch (Exception e)
-            {
-                LogHelpers.Write(e.InnerException?.ToString());
-                LogHelpers.Write(e.Message);
-                LogHelpers.Write(e.StackTrace);
-            }
-        }*/
     }
 }
