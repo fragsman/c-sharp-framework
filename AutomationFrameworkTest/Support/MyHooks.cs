@@ -20,14 +20,13 @@ namespace AutomationFrameworkTest.Support
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            //Initialize reports?
             Logger.ConfigureLogFile();
             Logger.Info("Logfile configured.");
         }
 
         //This will only run run for those scenarios tagged as web as they need a driver and browser
         [BeforeScenario("@web")]
-        public void BeforeWebScenario()
+        public void OpenBrowserAndNativateToHomepage()
         {
             Logger.Info("Creating web driver...");
             driver = new DriverHandler().CreateWebDriver();
@@ -37,19 +36,10 @@ namespace AutomationFrameworkTest.Support
 
         //This will only run run for those scenarios tagged as web as they need a driver and browser
         [AfterScenario("@web")]
-        public void AfterWebScenario()
+        public void CloseWebDriver()
         {
             Logger.Info("Closing web driver...");
-            //TestContext.AddResultFile(reportUrl + "dashboard.html");
-            //TestContext.AddResultFile(reportUrl + "index.html");
             DriverTeardown();
-        }
-
-        [AfterTestRun]
-        public static void AfterTestRun()
-        {
-            Logger.Info("AfterTestRun...");
-            //_extentReports.Flush();
         }
 
         public IWebDriver GetDriver()
