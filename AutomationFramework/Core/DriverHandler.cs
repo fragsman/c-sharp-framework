@@ -13,7 +13,6 @@ namespace AutomationFramework.Core
         public IWebDriver CreateWebDriver()
         {
             WebDriver driver;
-            ConfigReader.SetConfig();
             BrowserType browserType = Config.BrowserType;
             switch (browserType)
             {

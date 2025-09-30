@@ -11,7 +11,7 @@ namespace AutomationFramework.Utils
             IWebElement element = null;
             try
             {
-                Logger.Debug("FindElement" + locator.ToString());
+                log("FindElement", driver, locator.ToString());
                 WebDriverWait webDriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
                 webDriverWait.Until(ExpectedConditions.ElementIsVisible(locator));
                 element = driver.FindElement(locator);
@@ -28,7 +28,7 @@ namespace AutomationFramework.Utils
         {
             try
             {
-                Logger.Debug("ClickElement" + locator.ToString());
+                log("ClickElement", driver, locator.ToString());
                 WebDriverWait webDriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
                 webDriverWait.Until(ExpectedConditions.ElementToBeClickable(locator));
                 driver.FindElement(locator).Click();
@@ -45,7 +45,7 @@ namespace AutomationFramework.Utils
             string elementText = "";
             try
             {
-                Logger.Debug("GetElementText" + locator.ToString());
+                log("GetElementText", driver, locator.ToString());
                 WebDriverWait webDriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
                 webDriverWait.Until(ExpectedConditions.ElementIsVisible(locator));
                 elementText = driver.FindElement(locator).Text;
@@ -56,6 +56,13 @@ namespace AutomationFramework.Utils
                 Logger.Debug(e.ToString());
             }
             return elementText;
+        }
+
+        // Wraps the action with an identifier for the WebDriver instance, otherwise it is hard to track in the logs when running tests in parallel
+        private static void log(string methodName, IWebDriver driver, string locator)
+        {
+            string driverId = driver.GetHashCode().ToString();
+            Logger.Debug(methodName + ": driver_" + driverId + " " + locator);
         }
     }
 }

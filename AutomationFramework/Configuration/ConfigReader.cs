@@ -5,6 +5,7 @@ namespace AutomationFramework.Configuration
 {
     public class ConfigReader
     {
+        //Sets static properties from the XML configuration file one time (called in BeforeTestRun in MyHooks.cs)
         public static void SetConfig()
         {
             string strFilename = GetProjectDirectory(MyDirectory.AutomationFramework) + "\\Configuration\\GlobalConfig.xml";
