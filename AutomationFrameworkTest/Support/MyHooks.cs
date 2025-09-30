@@ -5,6 +5,9 @@ using AutomationFramework.Utils;
 using OpenQA.Selenium;
 using Reqnroll;
 
+[assembly: Parallelizable(ParallelScope.Children)] //To run scenarios in parallel
+[assembly: LevelOfParallelism(4)] //Number of threads to be used in parallel
+
 namespace AutomationFrameworkTest.Support
 {
     [Binding]
@@ -24,6 +27,7 @@ namespace AutomationFrameworkTest.Support
             Logger.ConfigureLogFile();
             Logger.Info("Logfile configured.");
             DeletePreviousRunResults();
+            ConfigReader.SetConfig();
         }
 
         //This will only run run for those scenarios tagged as web as they need a driver and browser
