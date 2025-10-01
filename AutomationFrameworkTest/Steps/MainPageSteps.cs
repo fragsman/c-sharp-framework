@@ -17,5 +17,12 @@ namespace AutomationFrameworkTest.Steps
             MainPage mainPage = new MainPage(GetDriver());
             mainPage.ClickOnSuperiorLink(linkName);
         }
+
+        [Given("user enters to cart details")]
+        public void GivenUserEntersToCartDetails()
+        {
+            HeaderBar headerBar = new HeaderBar(GetDriver());
+            headerBar.EnterToCart();
+        }
     }
 }

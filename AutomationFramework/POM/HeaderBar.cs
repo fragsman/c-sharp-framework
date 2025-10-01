@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AutomationFramework.Utils;
+using OpenQA.Selenium;
 
 namespace AutomationFramework.POM
 {
@@ -9,6 +10,18 @@ namespace AutomationFramework.POM
 
         public HeaderBar(IWebDriver driver) : base(driver)
         {
+        }
+
+        public int GetCurrentItemsInCart()
+        {
+            string cartText = Interactor.GetElementText(driver, cartIconCount);
+            cartText.Replace(" ", "");
+            return int.Parse(cartText);
+        }
+
+        public void EnterToCart()
+        {
+            driver.Navigate().GoToUrl("https://askomdch.com/cart/");
         }
     }
 }
