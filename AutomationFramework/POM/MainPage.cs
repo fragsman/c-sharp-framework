@@ -23,8 +23,7 @@ namespace AutomationFramework.POM
                 _ => null,
             };
             if (elem == null)
-                //TODO: Logger.Info("clickOnSuperiorLink: " + name + ", not a valid option");
-                Console.Out.WriteLine("clickOnSuperiorLink: " + name + ", not a valid option");
+                Logger.Info("clickOnSuperiorLink: " + name + ", not a valid option");
             else
                 elem.Click();
         }

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AutomationFramework.Utils;
+using OpenQA.Selenium;
 
 namespace AutomationFramework.POM
 {
@@ -9,6 +10,11 @@ namespace AutomationFramework.POM
         protected BasePage(IWebDriver driver)
         {
             this.driver = driver;
+        }
+
+        public void WaitForBlockingOverlays()
+        {
+            Interactor.WaitForBlockingOverlays(driver);
         }
     }
 }

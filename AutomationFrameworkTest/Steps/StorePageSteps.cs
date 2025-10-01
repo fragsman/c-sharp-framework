@@ -18,5 +18,11 @@ namespace AutomationFrameworkTest.Steps
             Assert.That(storePage.GetCurrentPageInNav(), Is.EqualTo(expectedTitle));
         }
 
+        [Given("user selects the first available product")]
+        public void GivenUserSelectsTheFirstAvailableProduct()
+        {
+            StorePage storePage = new StorePage(GetDriver());
+            storePage.ClickOnFirstAvailableProduct();
+        }
     }
 }
