@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.BiDi;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 
@@ -140,12 +141,37 @@ namespace AutomationFramework.Utils
             catch (Exception e)
             {
                 Logger.Error("Failed to find overlays " + overlayBlockers);
+                Logger.Debug(e.ToString());
             }
             if (elements.Count > 0)
             {
                 Logger.Debug($"Found {elements.Count} overlays, waiting...");
                 Thread.Sleep(2000); //TODO Java can check for invisibility of-all-elements (blocking_overlays). Not c#. Research.
             }
+        }
+
+        public static IAlert WaitForAlertIsPresent(IWebDriver driver, int timeoutInSeconds = 10)
+        {
+            WebDriverWait Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+            return Wait.Until(ExpectedConditions.AlertIsPresent());
+        }
+
+        public static void AcceptAlert(IWebDriver driver, int timeout = 10)
+        {
+            IAlert alert = WaitForAlertIsPresent(driver, timeout);
+            alert.Accept();
+        }
+
+        public static void CancelAlert(IWebDriver driver, int timeout = 10)
+        {
+            IAlert alert = WaitForAlertIsPresent(driver, timeout);
+            alert.Accept();
+        }
+
+        public static string GetAlertText(IWebDriver driver, int timeout = 10)
+        {
+            IAlert alert = WaitForAlertIsPresent(driver, timeout);
+            return alert.Text;
         }
     }
 }
