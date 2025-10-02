@@ -1,4 +1,4 @@
-# c-sharp-framework
+![CSharp Logo](https://github.com/user-attachments/assets/cbc71c34-30a5-41c3-8ae3-8f01d378a8f8)
 This is a Selenium with C# Automation framework just in case I need to use one quick and I don't want to be setting up all from scratch.
 
 ## Technologies 👾
@@ -23,9 +23,8 @@ This is a Selenium with C# Automation framework just in case I need to use one q
 - Once tests finished _allure-results_ folder will be generated (inside _AutomationFrameworkTest/Report_ folder), along with the results.
 - To generate human-readable and beautiful HTML report, type in the 📟 `allure generate AutomationFrameworkTest/Reports/allure-results -o AutomationFrameworkTest/Reports/allure-report --clean --single-file`. The report will be generated in _AutomationFrameworkTest/Reports/allure-report_.
 
-
 ## Github Actions ✔️
-- TBD
+- In Progress 🚧: I'm currently at the end of my free time so I have around 24hs to finish this or will be a small upgrade in the future.
 
 ## Troubleshooting 🔧
 - If you see this message on Visual Studio `Test assembly not found. Please build the project to enable the Reqnroll Visual Studio Extension features.`. Rebuild the project and execute the tests. 
