@@ -32,7 +32,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
       env:
         ENTORNO: local
-		
+
     - name: Debug contents-a (delete me after)
       run: ls -la AutomationFrameworkTest/Reports/allure-results
     - name: Debug contents-b (delete me after)
