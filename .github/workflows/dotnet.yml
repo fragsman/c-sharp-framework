@@ -32,7 +32,7 @@ jobs:
       continue-on-error: true
       run: dotnet test --no-build --verbosity normal
       env:
-        ENTORNO: local
+        ENTORNO: github
 
     - name: Upload tests results (to be used by Linux)
       id: upload-artifact
@@ -40,6 +40,9 @@ jobs:
       with:
         name: test-results-windows
         path: AutomationFrameworkTest/Reports/allure-results
+
+    - name: Debug upload results
+      run: ls -l AutomationFrameworkTest/Reports/allure-results
 
   prepare-reports:
     needs: build-and-test
@@ -59,6 +62,9 @@ jobs:
       with:
         name: test-results-windows
         path: allure-results
+
+    - name: Debug results download
+      run: ls -l allure-results
         
     - name: Build test report
       uses: simple-elf/allure-report-action@v1.7
