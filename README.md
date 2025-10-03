@@ -24,7 +24,8 @@ This is a Selenium with C# Automation framework just in case I need to use one q
 - To generate human-readable and beautiful HTML report, type in the 📟 `allure generate AutomationFrameworkTest/Reports/allure-results -o AutomationFrameworkTest/Reports/allure-report --clean --single-file`. The report will be generated in _AutomationFrameworkTest/Reports/allure-report_.
 
 ## Github Actions ✔️
-- In Progress 🚧: I'm currently at the end of my free time so I have around 24hs to finish this or will be a small upgrade in the future.
+- This project is set up for being run on Github Actions. Everytime there is a Pull Request or a Push to the main branch an Action will be run and test will be executed. The report along with the results can be found in [Github Pages](https://fragsman.github.io/c-sharp-framework/) for this project.
+- For more information about how is Github Actions configured, check the folder `.github/worlkflows`.
 
 ## Troubleshooting 🔧
 - If you see this message on Visual Studio `Test assembly not found. Please build the project to enable the Reqnroll Visual Studio Extension features.`. Rebuild the project and execute the tests. 

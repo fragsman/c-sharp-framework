@@ -41,9 +41,6 @@ jobs:
         name: test-results-windows
         path: AutomationFrameworkTest/Reports/allure-results
 
-    - name: Debug upload results
-      run: ls -l AutomationFrameworkTest/Reports/allure-results
-
   prepare-reports:
     needs: build-and-test
     runs-on: ubuntu-latest
@@ -62,9 +59,6 @@ jobs:
       with:
         name: test-results-windows
         path: allure-results
-
-    - name: Debug results download
-      run: ls -l allure-results
         
     - name: Build test report
       uses: simple-elf/allure-report-action@v1.7
