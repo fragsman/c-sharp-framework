@@ -34,19 +34,12 @@ jobs:
       env:
         ENTORNO: local
 
-    - name: Debug contents-a (delete me after)
-      continue-on-error: true
-      run: ls -l AutomationFrameworkTest/Reports/allure-results
-    - name: Debug contents-b (delete me after)
-      continue-on-error: true
-      run: ls -l ../../../Reports/allure-results
-
     - name: Upload tests results (to be used by Linux)
       id: upload-artifact
       uses: actions/upload-artifact@v4
       with:
         name: test-results-windows
-        path: ../../../Reports/allure-results
+        path: AutomationFrameworkTest/Reports/allure-results
 
   prepare-reports:
     needs: build-and-test
