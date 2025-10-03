@@ -1,0 +1,1 @@
+This file is here to forcé git to upload "Reports" folder since all folders here are being ignore in .gitignore. Hence the folder Will be ignored too as it is empty.
