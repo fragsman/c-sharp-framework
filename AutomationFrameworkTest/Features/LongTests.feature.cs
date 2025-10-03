@@ -84,11 +84,13 @@ namespace AutomationFrameworkTest.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Buying a product")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("web")]
         public async System.Threading.Tasks.Task BuyingAProduct()
         {
             string[] tagsOfScenario = new string[] {
-                    "web"};
+                    "web",
+                    "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Buying a product", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
@@ -131,11 +133,13 @@ namespace AutomationFrameworkTest.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Enter invalid coupon")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("web")]
         public async System.Threading.Tasks.Task EnterInvalidCoupon()
         {
             string[] tagsOfScenario = new string[] {
-                    "web"};
+                    "web",
+                    "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Enter invalid coupon", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 15
@@ -172,11 +176,13 @@ namespace AutomationFrameworkTest.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Picking a random country for checkout")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("web")]
         public async System.Threading.Tasks.Task PickingARandomCountryForCheckout()
         {
             string[] tagsOfScenario = new string[] {
-                    "web"};
+                    "web",
+                    "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Picking a random country for checkout", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 24

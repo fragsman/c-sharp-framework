@@ -1,6 +1,6 @@
 Feature: Long Selenium Tests for AskOmCdh page
 
-  @web
+@web
   Scenario: Buying a product
     Given user selects the "Store" link
     And user selects the first available product
@@ -20,7 +20,7 @@ Feature: Long Selenium Tests for AskOmCdh page
     When user enters an invalid coupon code "invalid"
     Then coupon error should display 'Coupon "invalid" does not exist!'
 
-  @web
+@web
   Scenario: Picking a random country for checkout
     Given user selects the "Store" link
     And user selects the first available product
