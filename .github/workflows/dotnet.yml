@@ -1,6 +1,9 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
+# The first job build, execute the test and upload the result as an artifact. The artifact is the output of job.
+# The second job generate the report and depends on the first job. Note that upload-artifact name matches with download-artifact name.
+
 name: .NET
 
 on:
@@ -10,9 +13,10 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  build-and-test:
     runs-on: windows-latest
+    outputs:
+      artifact-name: ${{steps.upload-artifact.outputs.artifact-name}}
 
     steps:
     - uses: actions/checkout@v4
@@ -27,6 +31,23 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
+    - name: Debug contents-a (delete me after)
+      run: ls -la AutomationFrameworkTest/Reports/allure-results
+    - name: Debug contents-b (delete me after)
+      run: ls -la ../../../Reports/allure-results
+
+    - name: Upload tests results (to be used by Linux)
+      id: upload-artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-windows
+        path: ../../../Reports/allure-results
+
+  prepare-reports:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+
+    steps:
     - name: Load test report history
       uses: actions/checkout@v3
       if: always()
@@ -35,13 +56,19 @@ jobs:
         ref: gh-pages
         path: gh-pages
 
+    - name: Download Test Results (downloaded from Windows)
+      uses: actions/download-artifact@v4
+      with:
+        name: test-results-windows
+        path: allure-results
+        
     - name: Build test report
       uses: simple-elf/allure-report-action@v1.7
       if: always()
       with:
         gh_pages: gh-pages
         allure_history: allure-history
-        allure_results: build/allure-results
+        allure_results: allure-results
 
     - name: Publish test report
       uses: peaceiris/actions-gh-pages@v3
