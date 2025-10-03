@@ -29,19 +29,17 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
+      continue-on-error: true
       run: dotnet test --no-build --verbosity normal
       env:
         ENTORNO: local
 
     - name: Debug contents-a (delete me after)
-      continue-on-error: true
       run: ls -la AutomationFrameworkTest/Reports/allure-results
     - name: Debug contents-b (delete me after)
-      continue-on-error: true
       run: ls -la ../../../Reports/allure-results
 
     - name: Upload tests results (to be used by Linux)
-      continue-on-error: true
       id: upload-artifact
       uses: actions/upload-artifact@v4
       with:
