@@ -35,9 +35,11 @@ jobs:
         ENTORNO: local
 
     - name: Debug contents-a (delete me after)
-      run: ls -la AutomationFrameworkTest/Reports/allure-results
+      continue-on-error: true
+      run: ls -l AutomationFrameworkTest/Reports/allure-results
     - name: Debug contents-b (delete me after)
-      run: ls -la ../../../Reports/allure-results
+      continue-on-error: true
+      run: ls -l ../../../Reports/allure-results
 
     - name: Upload tests results (to be used by Linux)
       id: upload-artifact
