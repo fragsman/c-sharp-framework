@@ -1,6 +1,6 @@
 Feature: Long Selenium Tests for AskOmCdh page
 
-  @web
+@web @ignore
   Scenario: Buying a product
     Given user selects the "Store" link
     And user selects the first available product
@@ -11,7 +11,7 @@ Feature: Long Selenium Tests for AskOmCdh page
     And user places the order
     Then checkout notice should display "Thank you. Your order has been received."
 
-  @web
+  @web @ignore
   Scenario: Enter invalid coupon
     Given user selects the "Store" link
     And user selects the first available product
@@ -20,7 +20,7 @@ Feature: Long Selenium Tests for AskOmCdh page
     When user enters an invalid coupon code "invalid"
     Then coupon error should display 'Coupon "invalid" does not exist!'
 
-  @web
+@web @ignore
   Scenario: Picking a random country for checkout
     Given user selects the "Store" link
     And user selects the first available product

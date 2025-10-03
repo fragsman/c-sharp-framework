@@ -30,6 +30,8 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      env:
+	ETORNO: local
 
     - name: Debug contents-a (delete me after)
       run: ls -la AutomationFrameworkTest/Reports/allure-results

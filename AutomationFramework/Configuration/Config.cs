@@ -11,5 +11,6 @@
         public static string Password { get; set; }
 
         public static BrowserType BrowserType { get; set; }
+        public static bool LogToFile { get; set; }
     }
 }

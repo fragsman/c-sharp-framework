@@ -17,7 +17,7 @@ This is a Selenium with C# Automation framework just in case I need to use one q
 
 ## Running Tests 🏃
 - You can either run tests from Test Explorer visual interface or via cli. For the following example we will do everything using cli. _Note:_ To execute previous commands, verify you are located inside at the Solution level in the 📟.
-- In 📟 type `dotnet test` and press Enter
+- In 📟 type `dotnet test` press Enter
 ### Run Results
 - After every run a _logfile.log_ with execution details will be generated inside _AutomationFrameworkTest/bin/Debug_.
 - Once tests finished _allure-results_ folder will be generated (inside _AutomationFrameworkTest/Report_ folder), along with the results.
@@ -29,6 +29,7 @@ This is a Selenium with C# Automation framework just in case I need to use one q
 ## Troubleshooting 🔧
 - If you see this message on Visual Studio `Test assembly not found. Please build the project to enable the Reqnroll Visual Studio Extension features.`. Rebuild the project and execute the tests. 
 - If you add some steps for a feature file and ReqnRoll doesn't see them, just run the test and ReqnRoll will "update" itself and see the new steps.
+- If you see the following message: `System.InvalidOperationException : session not created: This version of Microsoft Edge WebDriver only supports Microsoft Edge version 141 Current browser version is 140.0.3485.94 with binary path C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe (SessionNotCreated)` update Selenium Package from NuGetPackage to the most recient versión.
 
 ## References
   📟 => Visual Studio Terminal or Power Shell for developers

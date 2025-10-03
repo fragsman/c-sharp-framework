@@ -30,19 +30,24 @@ namespace AutomationFramework.Utils
 
         public static void Write(string logMessage)
         {
-            try
+            if (Config.LogToFile == false)
+                Console.WriteLine(logMessage);
+            else
             {
-                // 'using' block guarantees file to be closed correctly, even if there are errors
-                using (StreamWriter writer = new StreamWriter(_logFile,true))
+                try
                 {
-                    writer.WriteLine(GetFormattedMessage(logMessage));
-                    writer.Close();
+                    // 'using' block guarantees file to be closed correctly, even if there are errors
+                    using (StreamWriter writer = new StreamWriter(_logFile, true))
+                    {
+                        writer.WriteLine(GetFormattedMessage(logMessage));
+                        writer.Close();
+                    }
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Error al escribir en el archivo: {e.Message}");
-            }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Error al escribir en el archivo: {e.Message}");
+                }
+            } 
         }
 
         private static string GetFormattedMessage(string logMessage)

@@ -8,7 +8,13 @@ namespace AutomationFramework.Configuration
         //Sets static properties from the XML configuration file one time (called in BeforeTestRun in MyHooks.cs)
         public static void SetConfig()
         {
-            string strFilename = GetProjectDirectory(MyDirectory.AutomationFramework) + "\\Configuration\\GlobalConfig.xml";
+            string envFile = "LocalConfig.xml";
+            string env = Environment.GetEnvironmentVariable("ENTORNO");
+            if (!string.IsNullOrEmpty(env))
+                if(env.Equals("github")) //this is already set in worflow file
+                    envFile = "GithubConfig.xml";
+
+            string strFilename = GetProjectDirectory(MyDirectory.AutomationFramework) + "\\Configuration\\"+ envFile;
             Logger.Debug("Reading configuration file: " + strFilename);
             FileStream stream = new FileStream(strFilename, FileMode.Open);
             XPathDocument document = new XPathDocument(stream);
@@ -18,19 +24,10 @@ namespace AutomationFramework.Configuration
             Config.BaseURL = navigator.SelectSingleNode("AutomationFramework/RunSettings/BaseURL").Value.ToString();
             Config.ExecutionEnvironment = navigator.SelectSingleNode("AutomationFramework/RunSettings/ExecutionEnvironment").Value.ToString();
 
-            string chosenBrowser;
-            if (Config.ExecutionEnvironment.Equals("local"))
-            {
-                Config.Username = navigator.SelectSingleNode("AutomationFramework/RunSettings/Username").Value.ToString();
-                Config.Password = navigator.SelectSingleNode("AutomationFramework/RunSettings/Password").Value.ToString();
-                chosenBrowser = navigator.SelectSingleNode("AutomationFramework/RunSettings/Browser").Value.ToString().ToLower();
-            }
-            else //Azure (or another CI/CD platform)
-            {
-                Config.Username = Environment.GetEnvironmentVariable("EY_USER", EnvironmentVariableTarget.User);
-                Config.Password = Environment.GetEnvironmentVariable("EY_PASSWORD", EnvironmentVariableTarget.User);
-                chosenBrowser = Environment.GetEnvironmentVariable("BROWSER", EnvironmentVariableTarget.User).ToLower();
-            }
+
+           Config.Username = navigator.SelectSingleNode("AutomationFramework/RunSettings/Username").Value.ToString();
+           Config.Password = navigator.SelectSingleNode("AutomationFramework/RunSettings/Password").Value.ToString();
+           string chosenBrowser = navigator.SelectSingleNode("AutomationFramework/RunSettings/Browser").Value.ToString().ToLower();
 
             switch (chosenBrowser)
             {
